@@ -1,5 +1,5 @@
 <core:FragmentDefinition id="SearchFrag" xmlns="sap.m" xmlns:core="sap.ui.core">
-	<SelectDialog title="Select Location" noDataText="No Data" liveChange="handleLocationSearch" confirm="handleLocationConfirm"
+	<SelectDialog title="Select Location test" noDataText="No Data" liveChange="handleLocationSearch" confirm="handleLocationConfirm"
 		cancel="handleClose" items="{path : '/ZCDS_APA_E_0279_F4FLOC'}">
 		<StandardListItem title="{tplnr}" description="{pltxt}"></StandardListItem>
 		<!-- <customData>
