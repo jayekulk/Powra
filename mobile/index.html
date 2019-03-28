@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+	<title>SAP Hybrid Mobile App</title>
+
+	<script id="sap-ui-bootstrap"
+		src="resources/sap-ui-core.js"
+		data-sap-ui-libs="sap.m"
+		data-sap-ui-theme="sap_belize"
+		data-sap-ui-preload="async"
+		data-sap-ui-xx-bindingSyntax="complex"
+		data-sap-ui-resourceroots='{ "zPowra.zPowra": "./" }'>
+	</script>
+
+	<script>
+	// The viewport meta tag must be inserted to the DOM before the "DOMContentLoaded" event is published.
+	// The initMobile function is responsible to insert the correct viewport according to the current device.
+	// For iPhone running iOS 7.1 and above a "minimal-ui" property is added to the viewport meta tag which allows minimizing the top and bottom bars of the browser.
+	jQuery.sap.initMobile({ preventScroll : false });
+	</script>
+
+	<!-- initialize bootstrap -->
+	<script type="text/javascript" src="hybrid/sap-mobile-hybrid.js"></script>
+	<script type="text/javascript" src="hybrid/logon.js"></script>
+	
+	<!-- app configuration info files are added during cloud build -->
+	<script type="text/javascript" src="appConfig.js"></script>
+	<script type="text/javascript" src="appRoutes.js"></script>
+	
+	<script type="text/javascript" src="cordova.js" onload="sap.hybrid.setCordova();"></script>
+
+	<script type="text/javascript">
+	(function() {
+		// ensure XMLHttpRequests adjust URLs properly to work in packaged context
+		var originalOpen = window.XMLHttpRequest.prototype.open;
+
+		window.XMLHttpRequest.prototype.open = function(method, url, async, user, password) {
+			if (fiori_client_appConfig && mobile_appRoutes && url) {
+				// match a local access URL to a path of application data routes
+				var route = null;
+				for (var i = 0; i < mobile_appRoutes.length; i++) {
+					if (url.indexOf(mobile_appRoutes[i].path) === 0 || ("/" + url).indexOf(mobile_appRoutes[i].path) === 0 ) {
+						route = mobile_appRoutes[i];
+						break;
+					}
+				}
+				
+				if (route) {	// path matched
+					var remoteBase = fiori_client_appConfig.fioriURL;	// actually not use fioriclient plugin but borrow some of its app configuration format
+
+					// remove trailing slash from remote base if present
+					if (remoteBase.charAt(remoteBase.length - 1) === '/') {
+						remoteBase = remoteBase.substring(0, remoteBase.length - 1);
+					}
+
+					// pack a remote access URL
+					arguments[1] = remoteBase + sap.hybrid.packUrl(url, route);
+				}
+			}
+
+			originalOpen.apply(this, arguments);
+
+			if (url && (url.indexOf('https://') === 0 || url.indexOf('http://') === 0)) {
+				this.setRequestHeader('Cache-Control', 'no-cache');
+			}
+		};
+	})();
+	
+	sap.hybrid.startApp = function() {
+		sap.ui.getCore().attachInit(function () {
+			// not support sap.ushell navigation
+			sap.ui.require([
+				"sap/m/Shell",
+				"sap/ui/core/ComponentContainer"
+			], function(Shell, ComponentContainer) {
+				// initialize the UI component
+				new Shell({
+					app: new ComponentContainer({
+						height : "100%",
+						name : "zPowra.zPowra"
+					})
+				}).placeAt("content");
+			});
+		});
+	};
+	
+	sap.hybrid.bootStrap();
+	</script>
+
+</head>
+
+<body class="sapUiBody" id="content" role="application">
+</body>
+
+</html>

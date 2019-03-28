@@ -1,0 +1,83 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZODATA_APA_E_0279_POWRA_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="question" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Characteristicname"/>
+                </Key>
+                <Property Name="Characteristicname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Characteristic" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Characteristictext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Long Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="POWRA" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Perassignrskcode"/>
+                    <PropertyRef Name="Perinvolvedesc"/>
+                    <PropertyRef Name="Notino"/>
+                </Key>
+                <Property Name="Perassignrskcode" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Perinvolvedesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Notino" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Notification" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Businessunitdesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Departmentdesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Teamdesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Jobnodesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Conducteddate" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Malfunct. End" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Conductedtime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Malfunction end" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Task" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flocationcode" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Locationdesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="chrct" Relationship="ZODATA_APA_E_0279_POWRA_SRV.charact" FromRole="FromRole_charact" ToRole="ToRole_charact"/>
+            </EntityType>
+            <EntityType Name="POWRACHARACTERISTIC" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Perassignrskcode"/>
+                    <PropertyRef Name="Perinvolvedesc"/>
+                    <PropertyRef Name="Notino"/>
+                    <PropertyRef Name="Code"/>
+                    <PropertyRef Name="Codegrp"/>
+                    <PropertyRef Name="Characteristicname"/>
+                </Key>
+                <Property Name="Perassignrskcode" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Perinvolvedesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Notino" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Notification" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Damage Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Codegrp" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Code Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Characteristicname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Characteristic" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Characteristicvalue" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Char. Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="charact" sap:content-version="1">
+                <End Type="ZODATA_APA_E_0279_POWRA_SRV.POWRA" Multiplicity="1" Role="FromRole_charact"/>
+                <End Type="ZODATA_APA_E_0279_POWRA_SRV.POWRACHARACTERISTIC" Multiplicity="*" Role="ToRole_charact"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_charact">
+                        <PropertyRef Name="Perassignrskcode"/>
+                        <PropertyRef Name="Perinvolvedesc"/>
+                        <PropertyRef Name="Notino"/>
+                    </Principal>
+                    <Dependent Role="ToRole_charact">
+                        <PropertyRef Name="Perassignrskcode"/>
+                        <PropertyRef Name="Perinvolvedesc"/>
+                        <PropertyRef Name="Notino"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZODATA_APA_E_0279_POWRA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="questionSet" EntityType="ZODATA_APA_E_0279_POWRA_SRV.question" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="POWRASet" EntityType="ZODATA_APA_E_0279_POWRA_SRV.POWRA" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="POWRACHARACTERISTICSet" EntityType="ZODATA_APA_E_0279_POWRA_SRV.POWRACHARACTERISTIC" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="charactSet" Association="ZODATA_APA_E_0279_POWRA_SRV.charact" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="POWRASet" Role="FromRole_charact"/>
+                    <End EntitySet="POWRACHARACTERISTICSet" Role="ToRole_charact"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZODATA_APA_E_0279_POWRA_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZODATA_APA_E_0279_POWRA_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

@@ -1,0 +1,160 @@
+{
+	"Forms": [
+		{
+			"src": "sap-icon://customfont/Height",
+			"text1": "Working At Height",
+			"text2": "Work at height means working in a place where a person could be injured by falling from it, even if it is at or below ground level.",
+			"qtype": "01"
+		},
+			{
+			"src": "sap-icon://customfont/Confined",
+			"text1": "Confined Space entry",
+			"text2": "Confined spaces include, but are not limited to, tanks, vessels, silos, storage bins, hoppers, vaults, pits, manholes, tunnels etc",
+			"qtype": "02"
+		},
+			{
+			"src": "sap-icon://customfont/Fire",
+			"text1": "Hot Work/Fire/Explosions",
+			"text2": "Open Flames, Combustible materials, chemical reactions etc.",
+			"qtype": "03"
+		},
+		{
+			"src": "sap-icon://customfont/Asp",
+			"text1": "Asphyxiation",
+			"text2": "Risk of being deprived of oxygen, which can result in unconsciousness or death; suffocation.",
+			"qtype": "04"
+		},
+			{
+			"src": "sap-icon://customfont/Dust",
+			"text1": "Dust or Fumes",
+			"text2": "Risk of breathing in dust or fumes",
+			"qtype": "05"
+		},
+		{
+			"src": "sap-icon://customfont/Temp",
+			"text1": "Temp (Low/High)",
+			"text2": "",
+			"qtype": "06"
+		},
+		{
+			"src": "sap-icon://customfont/Lift",
+			"text1": "Lifting Operations",
+			"text2": "",
+			"qtype": "07"
+		},
+				{
+			"src": "sap-icon://customfont/Subs",
+			"text1": "Hazardous Substances",
+			"text2": "Hazardous substances that have the potential to cause ill health",
+			"qtype": "08"
+		},
+		{
+			"src": "sap-icon://customfont/Ec",
+			"text1": "Electricity",
+			"text2": "Could make electrical contact with energised equipment or conductor, may sustain an injury from shock; and/or, - there is potential to receive an arc flash burn, thermal burn, or blast injury.",
+			"qtype": "09"
+		},
+	{
+			"src": "sap-icon://physical-activity",
+			"text1": "Stored Energy or Insecure Load",
+			"text2": "",
+			"qtype": "10"
+		},
+		{
+			"src": "sap-icon://customfont/Traffic",
+			"text1": "Traffic, Moving Vehicles or Plant",
+			"text2": "",
+			"qtype": "11"
+		},
+			{
+			"src": "sap-icon://physical-activity",
+			"text1": "Objects Overturning or Collapsing",
+			"text2": "Open Flames, Combustible materials, chemical reactions etc.",
+			"qtype": "12"
+		},
+			{
+			"src": "sap-icon://customfont/Noise",
+			"text1": "Noise and/or Vibration",
+			"text2": "Excessive noise present",
+			"qtype": "13"
+		},
+				{
+			"src": "sap-icon://physical-activity",
+			"text1": "Inadequate Lighting",
+			"text2": "",
+			"qtype": "14"
+		},
+			{
+			"src": "sap-icon://customfont/Slips",
+			"text1": "Slips, Trips or Falls",
+			"text2": "",
+			"qtype": "15"
+		},
+			{
+			"src": "sap-icon://physical-activity",
+			"text1": "Adverse Weather",
+			"text2": "",
+			"qtype": "16"
+		},
+			{
+			"src": "sap-icon://customfont/Manual",
+			"text1": "Manual Handling",
+			"text2": "Lifting, pushing, pulling etc",
+			"qtype": "17"
+		},{
+		
+			"src": "sap-icon://message-warning",
+			"text1": "Risk to Others",
+			"text2": "",
+			"qtype": "18"
+		}
+	],
+	"Forms2":[
+		{
+		"css": "border",
+			"text1": "Are you comfortable with working environment to safely carry out the task1?",
+			"text2": "Work at height means working in a place where a person could be injured by falling from it, even if it is at or below ground level."
+		},
+			{
+		"css": "border",
+			"text1": "If you are lone working have you logged into the Kelda Group lone worker system?",
+			"text2": "Confined spaces include, but are not limited to, tanks, vessels, silos, storage bins, hoppers, vaults, pits, manholes, tunnels etc"
+		},
+			{
+				"css": "border",
+			"text1": "Is a risk assessment in place for the task?",
+			"text2": "Open Flames, Combustible materials, chemical reactions etc."
+		},
+		{
+				"css": "border",
+			"text1": "Are you familiar required with the controls in the risk assessment?",
+			"text2": "Risk of being deprived of oxygen, which can result in unconsciousness or death; suffocation."
+		},
+			{
+				"css": "border",
+			"text1": "Are you trained and competent to undertake the task?",
+			"text2": "Risk of breathing in dust or fumes"
+		},
+		{
+				"css": "border",
+			"text1": "Do you have everything you need to undertake the task safely e.g. as defined in the risk assessment and/or SWP?",
+			"text2": ""
+		},
+		{
+			"css": "border",
+			"text1": "Are all tools and equipment to be used for the task inspected and where required tested and certified?",
+			"text2": ""
+		},
+				{
+				"css": "border",
+			"text1": "Do you have the right PPE for the task? PPE must be in date (where appropriate), fit for purpose and in good condition",
+			"text2": "Hazardous substances that have the potential to cause ill health"
+		},
+		{
+			"css": "border",
+			"text1": "Has the asset been isolated (electrical, mechanical and PROCESS) ready for the work to take place?",
+			"text2": "Could make electrical contact with energised equipment or conductor, may sustain an injury from shock; and/or, - there is potential to receive an arc flash burn, thermal burn, or blast injury."
+		}
+	
+]
+}

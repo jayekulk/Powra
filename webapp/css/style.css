@@ -1,0 +1,167 @@
+
+.border{
+    border-style: groove;
+    border-width: 1px;
+}
+.background{
+	background :black;
+}
+.whiteBackground{
+		background :white;
+}
+.textcolor{
+	color : #1E90FF;
+	font-size: 20px;
+}
+.titlebackground{
+	backgound:	#FAEBD7;
+}
+.Bold{
+	font-weight: bold;
+}
+/*.barBorder{
+	border :none !important;
+	border-bottom-color : none !important;
+}*/
+@font-face {
+    font-family: 'icomoon';
+    src: url('icomoon.eot?ood8lo');
+    src: url('icomoon.eot?ood8lo#iefix') format('embedded-opentype'), url('icomoon.ttf?ood8lo') format('truetype'), url('icomoon.woff?ood8lo') format('woff'), url('icomoon.svg?ood8lo#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-Height .path1:before {
+  content: "\e94c";
+  color: #e4e4e4;
+}
+.icon-Height .path2:before {
+  content: "\e94d";
+  color: #ededed;
+  margin-left: -1em;
+}
+
+.icon-Confined .path1:before {
+  content: "\e90a";
+  color: #999;
+}
+.icon-Confined .path2:before {
+  content: "\e90b";
+  color: #b6b6b6;
+  margin-left: -1em;
+}
+.icon-Confined.path3:before {
+  content: "\e90c";
+  color: #e4e4e4;
+  margin-left: -1em;
+}
+.icon-Fire .path1:before {
+  content: "\e91c";
+  color: #e4e4e4;
+}
+.icon-Fire .path2:before {
+  content: "\e91d";
+  color: #e99064;
+  margin-left: -1em;
+}
+.icon-Asp .path1:before {
+  content: "\e900";
+  color: #e4e4e4;
+}
+.icon-Asp .path2:before {
+  content: "\e901";
+  color: #ededed;
+  margin-left: -1em;
+}
+.icon-Dust .path1:before {
+  content: "\e911";
+  color: #b6b6b6;
+}
+.icon-Dust .path2:before {
+  content: "\e912";
+  color: #e4e4e4;
+  margin-left: -1em;
+}
+.icon-Temp .path1:before {
+  content: "\e931";
+  color: #b6b6b6;
+}
+.icon-Temp .path2:before {
+  content: "\e932";
+  color: #e4e4e4;
+  margin-left: -1em;
+}
+.icon-Lift .path1:before {
+  content: "\e922";
+  color: #b6b6b6;
+}
+.icon-Lift .path2:before {
+  content: "\e923";
+  color: #e4e4e4;
+  margin-left: -1em;
+}
+.icon-Subs .path1:before {
+  content: "\e93d";
+  color: #b6b6b6;
+}
+.icon-Subs .path2:before {
+  content: "\e93e";
+  color: #e4e4e4;
+  margin-left: -1em;
+}
+.icon-Ec .path1:before {
+  content: "\e917";
+  color: #b6b6b6;
+}
+.icon-Ec .path2:before {
+  content: "\e918";
+  color: #e4e4e4;
+  margin-left: -1em;
+}
+.icon-Traffic .path1:before {
+  content: "\e947";
+  color: #b6b6b6;
+}
+.icon-Traffic .path2:before {
+  content: "\e948";
+  color: #e4e4e4;
+  margin-left: -1em;
+}
+.icon-Noise.path1:before {
+  content: "\e92c";
+  color: #b6b6b6;
+}
+.icon-Noise .path2:before {
+  content: "\e92d";
+  color: #e4e4e4;
+  margin-left: -1em;
+}
+.icon-Slips .path1:before {
+  content: "\e937";
+  color: #b6b6b6;
+}
+.icon-Slips .path2:before {
+  content: "\e938";
+  color: #e4e4e4;
+  margin-left: -1em;
+}
+.icon-Manual:before {
+  content: "\e928";
+  color: #e4e4e4;
+}

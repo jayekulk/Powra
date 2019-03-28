@@ -1,0 +1,176 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:m="sap.m"
+	xmlns:sample="sap.uxap.sample.ObjectPageFormLayout" xmlns:goals="sap.uxap.sample.ObjectPageFormLayout.block.goals"
+	xmlns:test="sap.uxap.sample.ObjectPageFormLayout.block.test" xmlns:personal="sap.uxap.sample.ObjectPageFormLayout.block.personal"
+	xmlns:employment="sap.uxap.sample.ObjectPageFormLayout.block.employment"
+	xmlns:blockcolor="sap.uxap.sample.ObjectPageFormLayout.block.blockscolor" controllerName="zPowra.zPowra.controller.firstScreen"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" height="100%">
+	<m:App id="app">
+		<m:pages>
+			<m:Page id="page3" title="PoWRA">
+				<f:SimpleForm id="simpleForm2" editable="true" layout="ResponsiveGridLayout" title="Kelda Group Point of Work Risk Assessment"
+					labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4"
+					emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						<m:Label text="Person Assessing Hazards and Associated Risks"/>
+						<m:Input id="inputPar" value=""/>
+						<m:Label text="Person Involved in the Task"/>
+						<m:Input id="inputPiit" value=""/>
+						<m:Label text="Business Unit"/>
+						<m:Input id="inputBu" value="" showValueHelp="true"></m:Input>
+						<m:Label text="Department"/>
+						<m:Input id="inputDep" value="" showValueHelp="true"></m:Input>
+						<m:Label text="Team"/>
+						<m:Input id="inputTeam" value="" showValueHelp="true"></m:Input>
+						<m:Label text="Job Number"/>
+						<m:Input id="inputJob" value="" showValueHelp="true"></m:Input>
+						<m:Label text="Conducted on"/>
+						<m:Text id="todayDate"/>
+						<m:Label text="Task"/>
+						<m:Input id="textTask"></m:Input>
+						<m:Label text="Location"/>
+						<m:Input id="inputLoc" value="" showValueHelp="true" valueHelpRequest="handleLocation"></m:Input>
+						<m:Label text="Location Description"/>
+						<m:Input id="inputLocDesc" value=""></m:Input>
+					</f:content>
+				</f:SimpleForm>
+				<m:footer>
+					<m:Bar design="Auto">
+						<!--<m:contentLeft>
+							<m:Button text="Cancel" type="Default" press="onCancelPress"/>
+						</m:contentLeft>-->
+						<m:contentRight>
+							<m:Button text="Next" type="Default" press="onNextPress2"/>
+						</m:contentRight>
+					</m:Bar>
+				</m:footer>
+			</m:Page>
+			<m:Page id="page4" title="Kelda Group Point of Work Risk Assessment" showNavButton="true" navButtonPress="onNavBack">
+				<l:VerticalLayout class="sapUiResponsiveContentPadding" width="100%">
+					<l:content>
+						<m:List id="listPage4" headerText="Can the work go ahead?" class="sapUiResponsiveContentPadding" items="{path: 'oModel>/Forms'}">
+							<m:CustomListItem class="border">
+								<m:Text text="{oModel>Characteristictext}" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/>
+								<m:HBox class="sapUiLargeMarginBegin sapUiSmallMarginTopBottom">
+									<core:Icon size="2rem" src="sap-icon://accept" alt="accept" class="sapUiLargeMarginBegin " color="#b4b4b4" press="onAcceptPress"/>
+									<core:Icon size="2rem" src="sap-icon://decline" alt="reject" class="sapUiLargeMarginBegin " color="#b4b4b4" press="onRejectPress"/>
+								</m:HBox>
+								<m:VBox visible="false" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom ">
+									<m:Image src="{oModel>path}/model/stopcard.jpeg" height="100%" width="100%" densityAware="false" tooltip="Stop Card"/>
+								</m:VBox>
+							</m:CustomListItem>
+						</m:List>
+					</l:content>
+					<l:BlockLayout id="BlockLayoutTwo">
+						<l:BlockLayoutRow class="background">
+							<l:BlockLayoutCell class="border background" titleAlignment="Center">
+								<m:Text
+									text="If you have answered 'NO' to any of the above questions, do not proceed with the task, consult your manager. If in doubt always ask!"
+									class="sapUiLargeMarginBegin textcolor"/>
+								<m:Bar class="background barBorder">
+									<m:contentRight>
+										<m:Button text="Proceed" id="proceed" type="Emphasized" enabled="false" class="sapUiLargeMarginBegin textcolor" press="onProceedPress"/>
+									</m:contentRight>
+								</m:Bar>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</l:VerticalLayout>
+			</m:Page>
+			<m:Page id="page5" title="Kelda Group Point of Work Risk Assessment" showNavButton="true" navButtonPress="onCancelPage5">
+				<l:VerticalLayout class="sapUiResponsiveContentPadding" width="100%">
+					<l:content>
+						<m:List id="listPage5" headerText="Please identify all hazards associated with the task" class="sapUiResponsiveContentPadding"
+							items="{path : 'oModelHazards>/'}">
+							<m:CustomListItem>
+								<m:HBox>
+									<core:Icon size="4rem" src="{oModelHazards>src}" alt="{oModelHazards>qtype}" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"
+										press="onIconPress" color="#E6E6FA"/>
+									<m:VBox>
+										<m:Text text="{oModelHazards>text1}" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom Bold"/>
+										<m:Text text="{oModelHazards>text2}" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/>
+									</m:VBox>
+								</m:HBox>
+								<m:VBox visible="false" class="border">
+									<m:Text text="{oModelHazards>ques/0/Characteristictext}" class="sapUiLargeMarginBegin sapUiSmallMarginTopBottom"/>
+									<m:HBox class="sapUiLargeMarginBegin sapUiSmallMarginTopBottom">
+										<core:Icon size="2rem" src="sap-icon://accept" class="sapUiLargeMarginBegin" color="#b4b4b4" press="onAcceptPressImageHazards"/>
+										<core:Icon size="2rem" src="sap-icon://decline" class="sapUiLargeMarginBegin" color="#b4b4b4" press="onRejectPressImageHazards"/>
+									</m:HBox>
+								</m:VBox>
+								<m:VBox visible="false" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom ">
+									<m:Image src="{oModelHazards>path}/model/stopcard.jpeg" height="100%" width="100%" densityAware="false"/>
+								</m:VBox>
+							</m:CustomListItem>
+						</m:List>
+					</l:content>
+					<l:BlockLayout id="BlockLayout2">
+						<l:BlockLayoutRow class="whiteBackground">
+							<l:BlockLayoutCell class="border" titleAlignment="Center">
+								<m:VBox>
+									<m:Text text="List any other Hazards that have been identified:"/>
+									<m:TextArea rows="6" width="100%"/>
+								</m:VBox>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+						<l:BlockLayoutRow class="whiteBackground">
+							<l:BlockLayoutCell class="border" titleAlignment="Center">
+								<m:UploadCollection id="UploadCollection" maximumFilenameLength="{settings>/maximumFilenameLength}"
+									maximumFileSize="{settings>/maximumFileSize}" multiple="true" change="onChange" fileDeleted="onFileDeleted"
+									filenameLengthExceed="onFilenameLengthExceed" fileRenamed="onFileRenamed" fileSizeExceed="onFileSizeExceed" fileType="{fileTypes>/selected}"
+									selectionChange="onSelectionChange" typeMissmatch="onTypeMissmatch" uploadComplete="onUploadComplete"
+									beforeUploadStarts="onBeforeUploadStarts" uploadTerminated="onUploadTerminated" items="{ path: '/items', templateShareable: false }"
+									numberOfAttachmentsText="Photos" showSeparators="{settings>/showSeparators}" uploadEnabled="{settings>/uploadEnabled}"
+									uploadButtonInvisible="{=!${settings>/uploadButtonVisible}}" mode="{settings>/mode}">
+									<m:items>
+										<m:UploadCollectionItem>
+											<m:attributes>
+												<m:ObjectAttribute title="{title}" text="{path : 'text', formatter : '.formatAttribute'}" active="{active}" press="onAttributePress"/>
+											</m:attributes>
+											<m:statuses>
+												<m:ObjectStatus title="{title}" text="{text}" state="{state}"/>
+											</m:statuses>
+										</m:UploadCollectionItem>
+									</m:items>
+								</m:UploadCollection>
+								<!--	<m:VBox>
+									<m:Text text="Photo 1"/>
+									<m:Button icon="sap-icon://camera" width="90%" class="sapUiSmallMarginBeginEnd sapUiTinyMarginTop"/>
+								
+									<m:Text text="Photo 1 Notes" class="sapUiSmallMarginTop"/>
+									<m:TextArea rows="1" width="90%" class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop"/>
+									<m:Text text="Photo 2" class="sapUiSmallMarginTop"/>
+									<m:Button icon="sap-icon://camera" width="90%" class="sapUiSmallMarginBeginEnd sapUiTinyMarginTop"/>
+								
+									<m:Text text="Photo 2 Notes" class="sapUiSmallMarginTop"/>
+									<m:TextArea rows="1" width="90%" class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop"/>
+								</m:VBox>-->
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+					<l:BlockLayout id="BlockLayout">
+						<l:BlockLayoutRow class="background">
+							<l:BlockLayoutCell class="border background" titleAlignment="Center">
+								<m:Text text="REMEMBER: If in doubt, contact your line manager" class="sapUiLargeMarginBegin textcolor"/>
+								<m:Bar class="background barBorder">
+									<m:contentRight>
+										<m:Button text="Submit" id="submit" type="Emphasized" enabled="false" class="sapUiLargeMarginBegin textcolor" press="onSubmitForm"/>
+									</m:contentRight>
+								</m:Bar>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</l:VerticalLayout>
+				<!--	<m:footer>
+					<m:Bar design="Auto">
+						<m:contentLeft>
+							<m:Button text="Cancel" type="Default" press="onCancelPage5"/>
+						</m:contentLeft>
+						<m:contentRight>
+							<m:Button id="submit" enabled="false" text="Submit" type="Default" press="onSubmitForm"/>
+						</m:contentRight>
+					</m:Bar>
+				</m:footer>-->
+			</m:Page>
+		</m:pages>
+	</m:App>
+</core:View>
